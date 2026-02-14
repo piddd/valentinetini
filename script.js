@@ -153,7 +153,7 @@
     confirmYes.addEventListener('click', () => {
         confirmModal.classList.remove('active');
         const message = encodeURIComponent(
-            `Hai sayang! 💕 Aku pilih: ${selectedDate}\n\nHappy Valentine's Day! ❤️`
+            `Hi Love! 💕 I Choose: ${selectedDate}\n\nHappy Valentine's Day! ❤️`
         );
         const waUrl = `https://wa.me/${CONFIG.waNumber}?text=${message}`;
         window.open(waUrl, '_blank');
