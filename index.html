@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day, Tini! 💕</title>
+    <meta name="description" content="Surat Cinta Digital — Happy Valentine's Day untuk Tini tercinta 💕">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==================== FLOATING HEARTS CANVAS ==================== -->
+    <canvas id="heartsCanvas"></canvas>
+
+    <!-- ==================== MUSIC TOGGLE ==================== -->
+    <button id="musicToggle" class="music-toggle" aria-label="Toggle Music">
+        <span class="music-icon">🎵</span>
+        <span class="music-label">Play</span>
+    </button>
+
+    <!-- ==================== SECTION 1: HERO / COVER ==================== -->
+    <section id="hero" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-subtitle fade-in">Untuk yang paling spesial di hidupku...</p>
+            <h1 class="hero-title fade-in">Happy Valentine's Day</h1>
+            <p class="hero-name fade-in">Tini 💕</p>
+
+            <div class="countdown-container fade-in">
+                <p class="countdown-label">Kita sudah bersama selama</p>
+                <div class="countdown-grid">
+                    <div class="countdown-item">
+                        <span id="countYears" class="countdown-number">0</span>
+                        <span class="countdown-unit">Tahun</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="countMonths" class="countdown-number">0</span>
+                        <span class="countdown-unit">Bulan</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="countDays" class="countdown-number">0</span>
+                        <span class="countdown-unit">Hari</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="countHours" class="countdown-number">0</span>
+                        <span class="countdown-unit">Jam</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="countMinutes" class="countdown-number">0</span>
+                        <span class="countdown-unit">Menit</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="countSeconds" class="countdown-number">0</span>
+                        <span class="countdown-unit">Detik</span>
+                    </div>
+                </div>
+            </div>
+
+            <button id="openMessageBtn" class="cta-button fade-in">
+                <span>Buka Pesan 💌</span>
+            </button>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION 2: GALLERY MEMORIES ==================== -->
+    <section id="gallery" class="gallery-section">
+        <div class="section-container">
+            <h2 class="section-title scroll-reveal">Kenangan Kita 📸</h2>
+            <p class="section-subtitle scroll-reveal">Setiap momen bersamamu adalah hadiah terindah</p>
+
+            <div class="masonry-grid">
+                <div class="masonry-item scroll-reveal" data-caption="Momen pertama kita ❤️">
+                    <img src="/assets/photo1.jpg" alt="Kenangan 1" loading="lazy">
+                    <div class="masonry-overlay">
+                        <span>Momen pertama kita ❤️</span>
+                    </div>
+                </div>
+                <div class="masonry-item masonry-tall scroll-reveal" data-caption="Jalan-jalan berdua 🌸">
+                    <img src="/assets/photo2.jpg" alt="Kenangan 2" loading="lazy">
+                    <div class="masonry-overlay">
+                        <span>Jalan-jalan berdua 🌸</span>
+                    </div>
+                </div>
+                <div class="masonry-item scroll-reveal" data-caption="Coffee date ☕">
+                    <img src="/assets/photo3.jpg" alt="Kenangan 3" loading="lazy">
+                    <div class="masonry-overlay">
+                        <span>Coffee date ☕</span>
+                    </div>
+                </div>
+                <div class="masonry-item masonry-tall scroll-reveal" data-caption="Sunset bersama 🌅">
+                    <img src="/assets/photo4.jpg" alt="Kenangan 4" loading="lazy">
+                    <div class="masonry-overlay">
+                        <span>Sunset bersama 🌅</span>
+                    </div>
+                </div>
+                <div class="masonry-item scroll-reveal" data-caption="Dinner romantis 🍷">
+                    <img src="/assets/photo5.jpg" alt="Kenangan 5" loading="lazy">
+                    <div class="masonry-overlay">
+                        <span>Dinner romantis 🍷</span>
+                    </div>
+                </div>
+                <div class="masonry-item scroll-reveal" data-caption="Tawa bahagia 😄">
+                    <img src="/assets/photo6.jpg" alt="Kenangan 6" loading="lazy">
+                    <div class="masonry-overlay">
+                        <span>Tawa bahagia 😄</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext">&#10095;</button>
+        <div class="lightbox-content">
+            <img id="lightboxImg" src="" alt="Lightbox Image">
+            <p id="lightboxCaption" class="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <!-- ==================== SECTION 3: LOVE LETTER ==================== -->
+    <section id="loveletter" class="letter-section">
+        <div class="section-container">
+            <div class="letter-envelope scroll-reveal">
+                <div class="letter-card">
+                    <div class="letter-header">
+                        <span class="letter-icon">💌</span>
+                        <h2 class="letter-title">Surat Cinta untuk Tini</h2>
+                        <div class="letter-date">14 Februari 2026</div>
+                    </div>
+                    <div class="letter-body">
+                        <p class="letter-line scroll-reveal">Sayang,</p>
+                        <p class="letter-line scroll-reveal">Sejak pertama kali kita bersama di 9 November 2022, hidupku berubah menjadi lebih berwarna. Kamu adalah alasan aku tersenyum setiap pagi, dan alasan aku bersyukur setiap malam.</p>
+                        <p class="letter-line scroll-reveal">Terima kasih sudah menjadi tempatku bersandar, tertawa, dan berbagi segala hal. Kamu bukan hanya kekasihku, tapi juga sahabat terbaikku.</p>
+                        <p class="letter-line scroll-reveal">Di hari Valentine ini, aku ingin kamu tahu bahwa cintaku padamu tumbuh lebih besar setiap harinya. Tidak ada kata yang cukup untuk menggambarkan betapa berartinya kamu bagiku.</p>
+                        <p class="letter-line scroll-reveal">Aku berjanji akan selalu ada untukmu — dalam setiap tawa, setiap tangis, dan setiap petualangan baru yang menunggu kita.</p>
+                        <p class="letter-line letter-closing scroll-reveal">Selamanya milikmu,<br><span class="letter-signature">❤️</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION 4: DATE PICKER ==================== -->
+    <section id="datepicker" class="datepicker-section">
+        <div class="section-container">
+            <h2 class="section-title scroll-reveal">Pilih Kencan Kita! 💑</h2>
+            <p class="section-subtitle scroll-reveal">Aku sudah siapkan beberapa rencana spesial. Kamu mau yang mana?</p>
+
+            <div class="date-cards-grid">
+                <div class="date-card scroll-reveal" data-date="Dinner romantis di tempat pertama kita ketemu 🍽️">
+                    <div class="date-card-icon">🍽️</div>
+                    <h3 class="date-card-title">Dinner Romantis</h3>
+                    <p class="date-card-desc">Di tempat pertama kita ketemu. Candlelight dinner, just the two of us.</p>
+                    <div class="date-card-btn">Pilih Ini! 💕</div>
+                </div>
+
+                <div class="date-card scroll-reveal" data-date="Netflix Marathon & Cuddle di rumah 🎬">
+                    <div class="date-card-icon">🎬</div>
+                    <h3 class="date-card-title">Netflix & Cuddle</h3>
+                    <p class="date-card-desc">Marathon film favorit kita, snack, blanket, dan pelukan hangat di rumah.</p>
+                    <div class="date-card-btn">Pilih Ini! 💕</div>
+                </div>
+
+                <div class="date-card scroll-reveal" data-date="Picnic seru di taman atau pantai 🌸">
+                    <div class="date-card-icon">🌸</div>
+                    <h3 class="date-card-title">Picnic Romantis</h3>
+                    <p class="date-card-desc">Piknik di taman atau pantai dengan makanan buatan sendiri dan live music.</p>
+                    <div class="date-card-btn">Pilih Ini! 💕</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION 5: FOOTER ==================== -->
+    <section id="footer" class="footer-section">
+        <div class="footer-hearts">
+            <span>💕</span><span>💕</span><span>💕</span>
+        </div>
+        <p class="footer-text scroll-reveal">Made with ❤️ hanya untuk <strong>Tini</strong></p>
+        <p class="footer-small scroll-reveal">Happy Valentine's Day 2026</p>
+        <button id="iLoveYouBtn" class="love-button scroll-reveal">
+            <span class="love-btn-text">I Love You Too! 💖</span>
+        </button>
+    </section>
+
+    <!-- ==================== CONFIRMATION MODAL ==================== -->
+    <div id="confirmModal" class="confirm-modal">
+        <div class="confirm-modal-content">
+            <div class="confirm-modal-icon">💕</div>
+            <h3 class="confirm-modal-title">Yakin pilih ini?</h3>
+            <p id="confirmModalText" class="confirm-modal-text"></p>
+            <div class="confirm-modal-actions">
+                <button id="confirmYes" class="confirm-btn confirm-yes">Yaaas! 🎉</button>
+                <button id="confirmNo" class="confirm-btn confirm-no">Hmm, ganti deh</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== LOVE EXPLOSION OVERLAY ==================== -->
+    <div id="loveExplosion" class="love-explosion">
+        <div class="explosion-content">
+            <div class="explosion-hearts" id="explosionHearts"></div>
+            <h2 class="explosion-text">I Love You Too! 💖</h2>
+            <p class="explosion-subtext">Terima kasih sudah jadi bagian terindah dalam hidupku</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
