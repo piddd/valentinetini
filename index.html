@@ -3,69 +3,104 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day, Tini! 💕</title>
-    <meta name="description" content="Surat Cinta Digital — Happy Valentine's Day untuk Tini tercinta 💕">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#FF69B4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Happy Birthday, Tini! 🎂</title>
+    <meta name="description" content="Birthday Celebration — Happy Birthday untuk Tini tersayang 🎉">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Pacifico&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ==================== FLOATING HEARTS CANVAS ==================== -->
-    <canvas id="heartsCanvas"></canvas>
+    <!-- ==================== FLOATING CONFETTI CANVAS ==================== -->
+    <canvas id="confettiCanvas"></canvas>
 
     <!-- ==================== MUSIC TOGGLE ==================== -->
     <button id="musicToggle" class="music-toggle" aria-label="Toggle Music">
-        <span class="music-icon">🎵</span>
+        <span class="music-icon emoji">🎵</span>
         <span class="music-label">Play</span>
     </button>
 
-    <!-- ==================== SECTION 1: HERO / COVER ==================== -->
+    <!-- ==================== SECTION 1: HERO / BIRTHDAY CAKE REVEAL ==================== -->
     <section id="hero" class="hero-section">
         <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <p class="hero-subtitle fade-in">To the one who holds my heart...</p>
-            <h1 class="hero-title fade-in">Happy Valentine's Day</h1>
-            <p class="hero-name fade-in">Tini 💕</p>
-
-            <div class="countdown-container fade-in">
-                <p class="countdown-label">Every second with you has been a blessing. We’ve been side-by-side for</p>
-                <div class="countdown-grid">
-                    <div class="countdown-item">
-                        <span id="countYears" class="countdown-number">0</span>
-                        <span class="countdown-unit">Years</span>
+        
+        <!-- Birthday Cake Container -->
+        <div class="cake-container" id="cakeContainer">
+            <div class="birthday-cake">
+                <div class="cake-layer cake-bottom"></div>
+                <div class="cake-layer cake-middle"></div>
+                <div class="cake-layer cake-top"></div>
+                <div class="candles-container">
+                    <div class="candle" data-candle="1">
+                        <div class="flame"></div>
+                        <div class="wick"></div>
                     </div>
-                    <div class="countdown-item">
-                        <span id="countMonths" class="countdown-number">0</span>
-                        <span class="countdown-unit">Months</span>
+                    <div class="candle" data-candle="2">
+                        <div class="flame"></div>
+                        <div class="wick"></div>
                     </div>
-                    <div class="countdown-item">
-                        <span id="countDays" class="countdown-number">0</span>
-                        <span class="countdown-unit">Days</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span id="countHours" class="countdown-number">0</span>
-                        <span class="countdown-unit">Hours</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span id="countMinutes" class="countdown-number">0</span>
-                        <span class="countdown-unit">Minutes</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span id="countSeconds" class="countdown-number">0</span>
-                        <span class="countdown-unit">Seconds</span>
+                    <div class="candle" data-candle="3">
+                        <div class="flame"></div>
+                        <div class="wick"></div>
                     </div>
                 </div>
             </div>
+            
+            <div class="hero-content fade-in-up">
+                <p class="hero-subtitle"><span class="emoji">🎉</span> It's Your Special Day! <span class="emoji">🎉</span></p>
+                <h1 class="hero-title">Happy Birthday</h1>
+                <p class="hero-name">Tini <span class="emoji">🎂</span></p>
 
-            <button id="openMessageBtn" class="cta-button fade-in">
-                <span>Read My Heart 💌</span>
-            </button>
+                <div class="age-container">
+                    <p class="age-label">Celebrating</p>
+                    <div class="age-display">
+                        <span id="currentAge" class="age-number">23</span>
+                        <span class="age-text">Years of Awesomeness!</span>
+                    </div>
+                </div>
+
+                <div class="countdown-container">
+                    <p class="countdown-label">Celebrating The Day You Were Born</p>
+                    <div class="countdown-grid">
+                        <div class="countdown-item">
+                            <span id="countYears" class="countdown-number">0</span>
+                            <span class="countdown-unit">Years</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="countMonths" class="countdown-number">0</span>
+                            <span class="countdown-unit">Months</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="countDays" class="countdown-number">0</span>
+                            <span class="countdown-unit">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="countHours" class="countdown-number">0</span>
+                            <span class="countdown-unit">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="countMinutes" class="countdown-number">0</span>
+                            <span class="countdown-unit">Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="countSeconds" class="countdown-number">0</span>
+                            <span class="countdown-unit">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="blowCandlesBtn" class="cta-button pulse-animation">
+                    <span><span class="emoji">🎂</span> Blow the Candles!</span>
+                </button>
+            </div>
         </div>
 
         <div class="scroll-indicator">
@@ -73,188 +108,168 @@
         </div>
     </section>
 
-    <!-- ==================== SECTION 2: GALLERY MEMORIES ==================== -->
+    <!-- ==================== SECTION 2: GALLERY MEMORIES (POLAROID CAROUSEL) ==================== -->
     <section id="gallery" class="gallery-section">
         <div class="section-container">
-            <h2 class="section-title scroll-reveal">Our Memories 📷</h2>
-            <p class="section-subtitle scroll-reveal">Every moment with you is a precious gift</p>
+            <h2 class="section-title scroll-reveal">Pieces of Your Story <span class="emoji"></span>📸</span></h2>
+            <p class="section-subtitle scroll-reveal">From little moments to unforgettable memories</p>
 
-            <div class="masonry-grid">
-                <div class="masonry-item scroll-reveal" data-caption="Our Sunset Date 🌅">
-                    <img src="assets/photo1.jpeg" alt="Our Sunset Date" loading="lazy">
-                    <div class="masonry-overlay">
-                        <span>Our Sunset Date 🌅</span>
+            <div class="polaroid-carousel-container">
+                <button class="carousel-nav carousel-prev" id="carouselPrev">
+                    <span>‹</span>
+                </button>
+                
+                <div class="polaroid-carousel" id="polaroidCarousel">
+                    <div class="polaroid-card">
+                        <div class="polaroid-photo">
+                            <img src="assets/foto1.jpeg" alt="Memory 1" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="polaroid-card">
+                        <div class="polaroid-photo">
+                            <img src="assets/foto2.jpeg" alt="Memory 2" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="polaroid-card">
+                        <div class="polaroid-photo">
+                            <img src="assets/foto3.jpeg" alt="Memory 3" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="polaroid-card">
+                        <div class="polaroid-photo">
+                            <img src="assets/foto4.jpeg" alt="Memory 4" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="polaroid-card">
+                        <div class="polaroid-photo">
+                            <img src="assets/foto5.jpeg" alt="Memory 5" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="polaroid-card">
+                        <div class="polaroid-photo">
+                            <img src="assets/foto6.jpeg" alt="Memory 6" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="polaroid-card">
+                        <div class="polaroid-photo">
+                            <img src="assets/foto7.jpeg" alt="Memory 7" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="polaroid-card">
+                        <div class="polaroid-photo">
+                            <img src="assets/foto8.jpeg" alt="Memory 8" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="polaroid-card">
+                        <div class="polaroid-photo">
+                            <img src="assets/foto9.jpeg" alt="Memory 9" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="polaroid-card">
+                        <div class="polaroid-photo">
+                            <img src="assets/foto10.jpeg" alt="Memory 10" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="polaroid-card">
+                        <div class="polaroid-photo">
+                            <img src="assets/foto11.jpeg" alt="Memory 11" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="polaroid-card">
+                        <div class="polaroid-photo">
+                            <img src="assets/foto12.jpeg" alt="Memory 12" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="polaroid-card">
+                        <div class="polaroid-photo">
+                            <img src="assets/foto13.jpg" alt="Memory 13" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="polaroid-card">
+                        <div class="polaroid-photo">
+                            <img src="assets/foto14.jpg" alt="Memory 14" loading="lazy">
+                        </div>
                     </div>
                 </div>
-                <div class="masonry-item masonry-tall scroll-reveal" data-caption="Our First Trip 🏍️">
-                    <img src="assets/photo2.jpeg" alt="Our First Trip" loading="lazy">
-                    <div class="masonry-overlay">
-                        <span>Our First Trip 🏍️</span>
+
+                <button class="carousel-nav carousel-next" id="carouselNext">
+                    <span>›</span>
+                </button>
+            </div>
+
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION 3: BIRTHDAY MESSAGE (TYPEWRITER EFFECT) ==================== -->
+    <section id="birthdayMessage" class="message-section">
+        <div class="section-container">
+            <div class="message-envelope scroll-reveal">
+                <div class="message-card typewriter-card">
+                    <div class="message-header">
+                        <span class="message-icon emoji">🎁</span>
+                        <h2 class="message-title">A Special Birthday Message</h2>
+                        <div class="message-date" id="birthdayDate">May 10, 2026</div>
                     </div>
-                </div>
-                <div class="masonry-item scroll-reveal" data-caption="Our Camp Date 🏕️">
-                    <img src="assets/photo3.jpeg" alt="Our Camp Date" loading="lazy">
-                    <div class="masonry-overlay">
-                        <span>Our Camp Date 🏕️</span>
-                    </div>
-                </div>
-                <div class="masonry-item masonry-tall scroll-reveal" data-caption="Our Volunteer Date 🎊">
-                    <img src="assets/photo4.jpeg" alt="Our Volunteer Date" loading="lazy">
-                    <div class="masonry-overlay">
-                        <span>Our Volunteer Date 🎊</span>
-                    </div>
-                </div>
-                <div class="masonry-item scroll-reveal" data-caption="Our Movie Date 🍿">
-                    <img src="assets/photo5.jpeg" alt="Our Movie Date" loading="lazy">
-                    <div class="masonry-overlay">
-                        <span>Our Movie Date 🍿</span>
-                    </div>
-                </div>
-                <div class="masonry-item scroll-reveal" data-caption="Our Museum Date 🎨">
-                    <img src="assets/photo6.jpeg" alt="Our Museum Date" loading="lazy">
-                    <div class="masonry-overlay">
-                        <span>Our Museum Date 🎨</span>
-                    </div>
-                </div>
-                <div class="masonry-item scroll-reveal" data-caption="Our Trip to Dieng 🗻">
-                    <img src="assets/photo7.jpeg" alt="Our Trip to Dieng" loading="lazy">
-                    <div class="masonry-overlay">
-                        <span>Our Trip to Dieng 🗻</span>
-                    </div>
-                </div>
-                <div class="masonry-item scroll-reveal" data-caption="Our Trip to Semarang 🏛️">
-                    <img src="assets/photo8.jpeg" alt="Our Trip to Semarang" loading="lazy">
-                    <div class="masonry-overlay">
-                        <span>Our Trip to Semarang 🏛️</span>
-                    </div>
-                </div>
-                <div class="masonry-item scroll-reveal" data-caption="Our ATV Date 🎮">
-                    <img src="assets/photo9.jpeg" alt="Our ATV Date" loading="lazy">
-                    <div class="masonry-overlay">
-                        <span>Our ATV Date 🎮</span>
-                    </div>
-                </div>
-                <div class="masonry-item scroll-reveal" data-caption="Your Comprehensive Exam 📖">
-                    <img src="assets/photo10.jpeg" alt="Your Comprehensive Exam" loading="lazy">
-                    <div class="masonry-overlay">
-                        <span>Your Comprehensive Exam 📖</span>
-                    </div>
-                </div>
-                <div class="masonry-item scroll-reveal" data-caption="Our Thesis Date 💻">
-                    <img src="assets/photo11.jpeg" alt="Our Thesis Date" loading="lazy">
-                    <div class="masonry-overlay">
-                        <span>Our Thesis Date 💻</span>
-                    </div>
-                </div>
-                <div class="masonry-item scroll-reveal" data-caption="Pizza Date 🍕">
-                    <img src="assets/photo12.jpeg" alt="Our Pizza Date" loading="lazy">
-                    <div class="masonry-overlay">
-                        <span>Our Pizza Date 🍕</span>
-                    </div>
-                </div>
-                <div class="masonry-item scroll-reveal" data-caption="Photobox Date 📸">
-                    <img src="assets/photo13.jpg" alt="Our Photobox Date" loading="lazy">
-                    <div class="masonry-overlay">
-                        <span>Our Photobox Date 📸</span>
-                    </div>
-                </div>
-                <div class="masonry-item scroll-reveal" data-caption="Our Hiking Date 🏔️">
-                    <img src="assets/photo14.jpeg" alt="Our Hiking Date" loading="lazy">
-                    <div class="masonry-overlay">
-                        <span>Our Hiking Date 🏔️</span>
-                    </div>
-                </div>
-                <div class="masonry-item scroll-reveal" data-caption="Our Graduation 🎓">
-                    <img src="assets/photo15.jpg" alt="Our Graduation" loading="lazy">
-                    <div class="masonry-overlay">
-                        <span>Our Graduation 🎓</span>
-                    </div>
-                </div>
-                <div class="masonry-item scroll-reveal" data-caption="Our Trip to Solo 🏛️">
-                    <img src="assets/photo16.jpeg" alt="Our Trip to Solo" loading="lazy">
-                    <div class="masonry-overlay">
-                        <span>Our Trip to Solo 🏛️</span>
-                    </div>
-                </div>
-                <div class="masonry-item scroll-reveal" data-caption="Our Trip to Aquarium 🐟">
-                    <img src="assets/photo17.jpg" alt="Our Trip to Aquarium" loading="lazy">
-                    <div class="masonry-overlay">
-                        <span>Our Trip to Aquarium 🐟</span>
+                    <div class="message-body" id="typewriterMessage">
+                        <!-- Content will be typed dynamically -->
+                        <div class="typewriter-cursor"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox">
-        <button class="lightbox-close" id="lightboxClose">&times;</button>
-        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#10094;</button>
-        <button class="lightbox-nav lightbox-next" id="lightboxNext">&#10095;</button>
-        <div class="lightbox-content">
-            <img id="lightboxImg" src="" alt="Lightbox Image">
-            <p id="lightboxCaption" class="lightbox-caption"></p>
-        </div>
-    </div>
-
-    <!-- ==================== SECTION 3: LOVE LETTER ==================== -->
-    <section id="loveletter" class="letter-section">
+    <!-- ==================== SECTION 4: BIRTHDAY VOUCHER (SINGLE GIFT) ==================== -->
+    <section id="voucherPicker" class="voucher-section">
         <div class="section-container">
-            <div class="letter-envelope scroll-reveal">
-                <div class="letter-card">
-                    <div class="letter-header">
-                        <span class="letter-icon">💌</span>
-                        <h2 class="letter-title">A Love Letter for Tini</h2>
-                        <div class="letter-date">14 February 2026</div>
-                    </div>
-                    <div class="letter-body">
-                        <p class="letter-line scroll-reveal">Dear Tini,</p>
-                        <p class="letter-line scroll-reveal">Since the first time we met on November 9, 2021, my life
-                            has
-                            changed into a more colorful one. You are the reason I smile every morning, and the reason
-                            I thank every night.</p>
-                        <p class="letter-line scroll-reveal">Thank you for being the place I lean on, laugh, and share
-                            everything. You are not just my girlfriend, but also my best friend.</p>
-                        <p class="letter-line scroll-reveal">On Valentine's Day, I want you to know that my love for you
-                            grows bigger every day. No words are enough to describe
-                            how much you mean to me.</p>
-                        <p class="letter-line scroll-reveal">I promise to always be there for you — in every laugh,
-                            every tear, and every new adventure waiting for us.</p>
-                        <p class="letter-line letter-closing scroll-reveal">Always yours,<br><span
-                                class="letter-signature">❤️</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== SECTION 4: DATE PICKER ==================== -->
-    <section id="datepicker" class="datepicker-section">
-        <div class="section-container">
-            <h2 class="section-title scroll-reveal">Pick Your Gift! 🎁</h2>
-            <p class="section-subtitle scroll-reveal">I have prepared some special gift. Which one do you want?
+            <h2 class="section-title scroll-reveal">Your Birthday, Your Choice<span class="emoji">🎫</span></h2>
+            <p class="section-subtitle scroll-reveal">Because the best gift is seeing you truly happy. Choose something you genuinely want, and let this birthday become a memory worth keeping.
             </p>
 
-            <div class="date-cards-grid">
-                <div class="date-card scroll-reveal" data-date="Bouquet 💐">
-                    <div class="date-card-icon">💐</div>
-                    <h3 class="date-card-title">Bouquet</h3>
-                    <p class="date-card-desc">A bouquet of flowers to make your day brighter.</p>
-                    <div class="date-card-btn">Choose This! 💕</div>
-                </div>
+            <!-- Single Premium Voucher Card -->
+            <div class="premium-voucher-container">
+                <div class="premium-voucher-card scroll-reveal">
+                    <!-- Voucher Header -->
+                    <div class="premium-voucher-header">
+                        <div class="voucher-badge-premium">SPECIAL BIRTHDAY GIFT VOUCHER</div>
+                        <div class="voucher-year">2026</div>
+                    </div>
 
-                <div class="date-card scroll-reveal" data-date="Doll 🧸">
-                    <div class="date-card-icon">🧸</div>
-                    <h3 class="date-card-title">Doll</h3>
-                    <p class="date-card-desc">A doll to make your day brighter.</p>
-                    <div class="date-card-btn">Choose This! 💕</div>
-                </div>
+                    <!-- Voucher Content (No Tabs) -->
+                    <div class="voucher-single-content">
+                        <div class="panel-icon-large emoji">🎁</div>
+                        <h3 class="panel-title">Tell Me Which Gift Makes You the Happiest</h3>
+                        <p class="panel-description">This birthday is all about you. Whether it’s a special gift, a favorite item, a sweet date, or an unforgettable experience — you get to choose what would make your day truly special.</p>
+                        <div class="panel-details">
+                            <div class="detail-row">
+                                <span class="detail-icon-small emoji">🎁</span>
+                                <span class="detail-text">Free to choose your own birthday gift</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-icon-small emoji">✨</span>
+                                <span class="detail-text">A special experience made just for you</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-icon-small emoji">💖</span>
+                                <span class="detail-text">Created with love and sincerity</span>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="date-card scroll-reveal" data-date="Perfume 🌫️">
-                    <div class="date-card-icon">🌫️</div>
-                    <h3 class="date-card-title">Perfume </h3>
-                    <p class="date-card-desc">A perfume to make your day brighter.</p>
-                    <div class="date-card-btn">Choose This! 💕</div>
+                    <!-- Voucher Footer with Redeem Button -->
+                    <div class="premium-voucher-footer">
+                        <button class="premium-redeem-btn" id="premiumRedeemBtn">
+                            <span class="btn-text">Redeem Your Birthday Gift</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                    </div>
+
+                    <!-- Decorative Elements -->
+                    <div class="voucher-corner voucher-corner-tl"></div>
+                    <div class="voucher-corner voucher-corner-tr"></div>
+                    <div class="voucher-corner voucher-corner-bl"></div>
+                    <div class="voucher-corner voucher-corner-br"></div>
                 </div>
             </div>
         </div>
@@ -262,35 +277,42 @@
 
     <!-- ==================== SECTION 5: FOOTER ==================== -->
     <section id="footer" class="footer-section">
-        <div class="footer-hearts">
-            <span>💕</span><span>💕</span><span>💕</span>
+        <div class="footer-icons">
+            <span class="emoji">🎂</span><span class="emoji">🎉</span><span class="emoji">🎁</span>
         </div>
-        <p class="footer-text scroll-reveal">Made with ❤️ only for <strong>Tini</strong></p>
-        <p class="footer-small scroll-reveal">Happy Valentine's Day 2026</p>
-        <button id="iLoveYouBtn" class="love-button scroll-reveal">
-            <span class="love-btn-text">I Love You Too! 💖</span>
+        <p class="footer-text scroll-reveal">Made with ❤️ specially for <strong>Tini</strong></p>
+        <p class="footer-small scroll-reveal">Happy Birthday 2026! <span class="emoji">🎊</span></p>
+        <button id="birthdayWishBtn" class="birthday-button scroll-reveal">
+            <span class="birthday-btn-text">Make a Wish! <span class="emoji">✨</span></span>
         </button>
     </section>
 
     <!-- ==================== CONFIRMATION MODAL ==================== -->
     <div id="confirmModal" class="confirm-modal">
         <div class="confirm-modal-content">
-            <div class="confirm-modal-icon">💕</div>
-            <h3 class="confirm-modal-title">Are you sure?</h3>
+            <div class="confirm-modal-icon emoji">🎁</div>
+            <h3 class="confirm-modal-title">Confirm Your Gift?</h3>
             <p id="confirmModalText" class="confirm-modal-text"></p>
             <div class="confirm-modal-actions">
-                <button id="confirmYes" class="confirm-btn confirm-yes">Yaaas! 🎉</button>
-                <button id="confirmNo" class="confirm-btn confirm-no">Hmm, change it</button>
+                <button id="confirmYes" class="confirm-btn confirm-yes">Yes, I want this! <span class="emoji">🎉</span></button>
+                <button id="confirmNo" class="confirm-btn confirm-no">Close</button>
             </div>
         </div>
     </div>
 
-    <!-- ==================== LOVE EXPLOSION OVERLAY ==================== -->
-    <div id="loveExplosion" class="love-explosion">
-        <div class="explosion-content">
-            <div class="explosion-hearts" id="explosionHearts"></div>
-            <h2 class="explosion-text">I Love You Too! 💖</h2>
-            <p class="explosion-subtext">Thank you for being the most beautiful person in my life</p>
+    <!-- ==================== BIRTHDAY CELEBRATION OVERLAY ==================== -->
+    <div id="birthdayCelebration" class="birthday-celebration">
+        <div class="celebration-content">
+            <div class="celebration-confetti" id="celebrationConfetti"></div>
+            <h2 class="celebration-text"><span class="emoji"></span>🎉</span> Happy Birthday! <span class="emoji">🎉</span></h2>
+            <p class="celebration-subtext">May all your wishes come true this year!</p>
+            <div class="celebration-balloons">
+                <span class="balloon emoji">🎈</span>
+                <span class="balloon emoji">🎈</span>
+                <span class="balloon emoji">🎈</span>
+                <span class="balloon emoji">🎈</span>
+                <span class="balloon emoji">🎈</span>
+            </div>
         </div>
     </div>
 
